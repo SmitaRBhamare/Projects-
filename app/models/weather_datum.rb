@@ -1,2 +1,0 @@
-class WeatherDatum < ApplicationRecord
-end
