@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city: MyString
+  main: MyString
+  temp: 1.5
+  feels_like: 1.5
+  recorded_at: 2024-10-26 12:10:36
+
+two:
+  city: MyString
+  main: MyString
+  temp: 1.5
+  feels_like: 1.5
+  recorded_at: 2024-10-26 12:10:36

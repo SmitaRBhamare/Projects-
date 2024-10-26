@@ -1,0 +1,153 @@
+  [1m[35m (68.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-10-25 19:28:51.730243', '2024-10-25 19:28:51.730246') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWeatherSummaries (20241025192711)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "weather_summaries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "city" varchar, "avg_temp" float, "max_temp" float, "min_temp" float, "dominant_condition" varchar, "recorded_on" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241025192711') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWeatherData (20241025193518)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "weather_data" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "city" varchar, "main" varchar, "temp" float, "feels_like" float, "recorded_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241025193518') RETURNING "version"[0m
+  [1m[36mTRANSACTION (59.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDailyWeatherSummaries (20241025193520)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "daily_weather_summaries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "city" varchar, "avg_temp" float, "max_temp" float, "min_temp" float, "dominant_condition" varchar, "recorded_on" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241025193520') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDailyWeatherSummaries (20241025193520)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "daily_weather_summaries"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20241025193520'[0m
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDailyWeatherSummaries (20241025193520)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "daily_weather_summaries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "city" varchar, "avg_temp" float, "max_temp" float, "min_temp" float, "dominant_condition" varchar, "recorded_on" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241025193520') RETURNING "version"[0m
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mDailyWeatherSummary Load (0.4ms)[0m  [1m[34mSELECT "daily_weather_summaries".* FROM "daily_weather_summaries" ORDER BY "daily_weather_summaries"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-10-26 06:44:51.188408', '2024-10-26 06:44:51.188411') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWeatherData (20241026064036)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "weather_data" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "city" varchar, "main" varchar, "temp" float, "feels_like" float, "recorded_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241026064036') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDailyWeatherSummaries (20241026064424)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "daily_weather_summaries" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "city" varchar, "avg_temp" float, "max_temp" float, "min_temp" float, "dominant_condition" varchar, "recorded_on" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241026064424') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" ORDER BY "weather_data"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDailyWeatherSummary Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "daily_weather_summaries"[0m
+  [1m[36mWeatherData Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "weather_data"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWeatherData Create (0.4ms)[0m  [1m[32mINSERT INTO "weather_data" ("city", "main", "temp", "feels_like", "recorded_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Pune"], ["main", "Clear"], ["temp", 29.590000000000032], ["feels_like", 29.560000000000002], ["recorded_at", "2024-10-26 07:59:59.158531"], ["created_at", "2024-10-26 07:59:59.183788"], ["updated_at", "2024-10-26 07:59:59.183788"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWeatherData Load (0.6ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" GROUP BY "weather_data"."city", DATE(recorded_at) /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" GROUP BY "weather_data"."city", DATE(recorded_at) ORDER BY "weather_data"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWeatherData Create (1.1ms)[0m  [1m[32mINSERT INTO "weather_data" ("city", "main", "temp", "feels_like", "recorded_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "#<WeatherData:0x00007f2109280010>"], ["main", "Clouds"], ["temp", 29.54], ["feels_like", 29.61], ["recorded_at", "2024-10-26 08:11:04.767730"], ["created_at", "2024-10-26 08:11:04.768319"], ["updated_at", "2024-10-26 08:11:04.768319"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWeatherData Load (0.4ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" ORDER BY "weather_data"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" = ? /* loading for pp */ LIMIT ?[0m  [["created_at", "2024-10-26"], ["LIMIT", 11]]
+  [1m[36mWeatherData Load (0.4ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mWeatherData Load (0.4ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data"[0m
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data"[0m
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data"[0m
+  [1m[36mWeatherData Load (0.3ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data"[0m
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data"[0m
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data"[0m
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data"[0m
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data"[0m
+  [1m[36mWeatherData Load (0.8ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" BETWEEN ? AND ? /* loading for pp */ LIMIT ?[0m  [["created_at", "2024-10-25 18:30:00"], ["created_at", "2024-10-26 18:29:59.999999"], ["LIMIT", 11]]
+  [1m[36mWeatherData Load (0.4ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2024-10-25 18:30:00"], ["created_at", "2024-10-26 18:29:59.999999"]]
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2024-10-25 18:30:00"], ["created_at", "2024-10-26 18:29:59.999999"]]
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2024-10-25 18:30:00"], ["created_at", "2024-10-26 18:29:59.999999"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWeatherData Create (1.1ms)[0m  [1m[32mINSERT INTO "weather_data" ("city", "main", "temp", "feels_like", "recorded_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "#<WeatherData:0x00007f2109280010>"], ["main", "Clouds"], ["temp", 29.54], ["feels_like", 29.61], ["recorded_at", "2024-10-26 08:30:58.500033"], ["created_at", "2024-10-26 08:30:58.500676"], ["updated_at", "2024-10-26 08:30:58.500676"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWeatherData Load (0.3ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2024-10-25 18:30:00"], ["created_at", "2024-10-26 18:29:59.999999"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDailyWeatherSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "daily_weather_summaries" ("city", "avg_temp", "max_temp", "min_temp", "dominant_condition", "recorded_on", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Pune"], ["avg_temp", 29.556666666666676], ["max_temp", 29.590000000000032], ["min_temp", 29.54], ["dominant_condition", "Clouds"], ["recorded_on", "2024-10-26"], ["created_at", "2024-10-26 08:31:59.806381"], ["updated_at", "2024-10-26 08:31:59.806381"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWeatherData Create (0.5ms)[0m  [1m[32mINSERT INTO "weather_data" ("city", "main", "temp", "feels_like", "recorded_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "pune"], ["main", "Clouds"], ["temp", 29.54], ["feels_like", 29.61], ["recorded_at", "2024-10-26 08:35:02.856772"], ["created_at", "2024-10-26 08:35:02.865739"], ["updated_at", "2024-10-26 08:35:02.865739"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWeatherData Load (0.1ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2024-10-25 18:30:00"], ["created_at", "2024-10-26 18:29:59.999999"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWeatherData Create (0.4ms)[0m  [1m[32mINSERT INTO "weather_data" ("city", "main", "temp", "feels_like", "recorded_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Pune"], ["main", "Clouds"], ["temp", 30.07], ["feels_like", 29.89], ["recorded_at", "2024-10-26 08:45:51.728263"], ["created_at", "2024-10-26 08:45:51.743941"], ["updated_at", "2024-10-26 08:45:51.743941"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWeatherData Load (0.1ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2024-10-25 18:30:00"], ["created_at", "2024-10-26 18:29:59.999999"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDailyWeatherSummary Create (0.3ms)[0m  [1m[32mINSERT INTO "daily_weather_summaries" ("city", "avg_temp", "max_temp", "min_temp", "dominant_condition", "recorded_on", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Pune"], ["avg_temp", 29.656000000000006], ["max_temp", 30.07], ["min_temp", 29.54], ["dominant_condition", "Clouds"], ["recorded_on", "2024-10-26"], ["created_at", "2024-10-26 08:45:51.756826"], ["updated_at", "2024-10-26 08:45:51.756826"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWeatherData Create (0.5ms)[0m  [1m[32mINSERT INTO "weather_data" ("city", "main", "temp", "feels_like", "recorded_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Pune"], ["main", "Clouds"], ["temp", 30.07], ["feels_like", 29.89], ["recorded_at", "2024-10-26 08:49:29.609990"], ["created_at", "2024-10-26 08:49:29.636560"], ["updated_at", "2024-10-26 08:49:29.636560"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWeatherData Load (0.1ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2024-10-25 18:30:00"], ["created_at", "2024-10-26 18:29:59.999999"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDailyWeatherSummary Create (0.5ms)[0m  [1m[32mINSERT INTO "daily_weather_summaries" ("city", "avg_temp", "max_temp", "min_temp", "dominant_condition", "recorded_on", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Pune"], ["avg_temp", 29.725000000000005], ["max_temp", 30.07], ["min_temp", 29.54], ["dominant_condition", "Clouds"], ["recorded_on", "2024-10-26"], ["created_at", "2024-10-26 08:49:29.650894"], ["updated_at", "2024-10-26 08:49:29.650894"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDailyWeatherSummary Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "daily_weather_summaries"[0m
+  [1m[36mDailyWeatherSummary Load (0.5ms)[0m  [1m[34mSELECT "daily_weather_summaries".* FROM "daily_weather_summaries" ORDER BY "daily_weather_summaries"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDailyWeatherSummary Load (0.4ms)[0m  [1m[34mSELECT "daily_weather_summaries".* FROM "daily_weather_summaries" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWeatherData Create (0.9ms)[0m  [1m[32mINSERT INTO "weather_data" ("city", "main", "temp", "feels_like", "recorded_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Nashik"], ["main", "Clouds"], ["temp", 29.72], ["feels_like", 29.37], ["recorded_at", "2024-10-26 08:53:44.193772"], ["created_at", "2024-10-26 08:53:44.218499"], ["updated_at", "2024-10-26 08:53:44.218499"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2024-10-25 18:30:00"], ["created_at", "2024-10-26 18:29:59.999999"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDailyWeatherSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "daily_weather_summaries" ("city", "avg_temp", "max_temp", "min_temp", "dominant_condition", "recorded_on", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Nashik"], ["avg_temp", 29.724285714285717], ["max_temp", 30.07], ["min_temp", 29.54], ["dominant_condition", "Clouds"], ["recorded_on", "2024-10-26"], ["created_at", "2024-10-26 08:53:44.227982"], ["updated_at", "2024-10-26 08:53:44.227982"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDailyWeatherSummary Load (0.2ms)[0m  [1m[34mSELECT "daily_weather_summaries".* FROM "daily_weather_summaries" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWeatherData Create (0.8ms)[0m  [1m[32mINSERT INTO "weather_data" ("city", "main", "temp", "feels_like", "recorded_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Mumbai"], ["main", "Smoke"], ["temp", 32.99], ["feels_like", 35.18], ["recorded_at", "2024-10-26 08:54:25.744501"], ["created_at", "2024-10-26 08:54:25.781784"], ["updated_at", "2024-10-26 08:54:25.781784"]]
+  [1m[36mTRANSACTION (21.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2024-10-25 18:30:00"], ["created_at", "2024-10-26 18:29:59.999999"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDailyWeatherSummary Create (0.4ms)[0m  [1m[32mINSERT INTO "daily_weather_summaries" ("city", "avg_temp", "max_temp", "min_temp", "dominant_condition", "recorded_on", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Mumbai"], ["avg_temp", 30.132500000000004], ["max_temp", 32.99], ["min_temp", 29.54], ["dominant_condition", "Clouds"], ["recorded_on", "2024-10-26"], ["created_at", "2024-10-26 08:54:25.825240"], ["updated_at", "2024-10-26 08:54:25.825240"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWeatherData Create (1.0ms)[0m  [1m[32mINSERT INTO "weather_data" ("city", "main", "temp", "feels_like", "recorded_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Pune"], ["main", "Clouds"], ["temp", 30.07], ["feels_like", 29.89], ["recorded_at", "2024-10-26 08:54:29.903681"], ["created_at", "2024-10-26 08:54:29.904516"], ["updated_at", "2024-10-26 08:54:29.904516"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mWeatherData Load (0.2ms)[0m  [1m[34mSELECT "weather_data".* FROM "weather_data" WHERE "weather_data"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2024-10-25 18:30:00"], ["created_at", "2024-10-26 18:29:59.999999"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDailyWeatherSummary Create (1.1ms)[0m  [1m[32mINSERT INTO "daily_weather_summaries" ("city", "avg_temp", "max_temp", "min_temp", "dominant_condition", "recorded_on", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Pune"], ["avg_temp", 30.12555555555556], ["max_temp", 32.99], ["min_temp", 29.54], ["dominant_condition", "Clouds"], ["recorded_on", "2024-10-26"], ["created_at", "2024-10-26 08:54:29.911588"], ["updated_at", "2024-10-26 08:54:29.911588"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDailyWeatherSummary Load (0.5ms)[0m  [1m[34mSELECT "daily_weather_summaries".* FROM "daily_weather_summaries" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWeatherData Create (1.1ms)[0m  [1m[32mINSERT INTO "weather_data" ("city", "main", "temp", "feels_like", "recorded_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Pune"], ["main", "Clouds"], ["temp", 30.16], ["feels_like", 30.0], ["recorded_at", "2024-10-26 08:58:44.047390"], ["created_at", "2024-10-26 08:58:44.048044"], ["updated_at", "2024-10-26 08:58:44.048044"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mWeatherData Create (0.4ms)[0m  [1m[32mINSERT INTO "weather_data" ("city", "main", "temp", "feels_like", "recorded_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["city", "Pune"], ["main", "Clouds"], ["temp", 30.07], ["feels_like", 29.89], ["recorded_at", "2024-10-26 09:00:41.994886"], ["created_at", "2024-10-26 09:00:42.012452"], ["updated_at", "2024-10-26 09:00:42.012452"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m

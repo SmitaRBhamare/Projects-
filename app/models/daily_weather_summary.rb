@@ -1,0 +1,2 @@
+class DailyWeatherSummary < ApplicationRecord
+end
